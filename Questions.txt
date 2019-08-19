@@ -1,0 +1,7 @@
+1. Integers, strings, booleans, objects, arrays, null, undefined.
+  null - is nothing, it doesn't exist,but it's an object
+  undefined - is a variable with no value
+
+2. Associative arrays are dynamic objects that loses it attributes and methods of an array when you assign values to keys.
+
+3. Multidimesional arrays are arrays with elements that consist of arrays.
