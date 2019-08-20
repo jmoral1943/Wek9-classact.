@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+      
+    // 1. A function is considered a callback function when it is passed into another function as an argument, and to continue code execution after an asynchronous operation has completed.
+
+    // 2
+    const numbers = 12345;
+
+    const reverseNum = (x) => {
+      const arr = x.toString().split("");
+      console.log(arr.reverse());
+    }
+
+    reverseNum(numbers)
+
+    //////////// 3.
+
+
+      const vowelCounter = (word) => {
+      const arr = word.toLowerCase().split("")
+      let vowelCount = 0;
+
+      arr.forEach(letter => {
+        // A, E, I, O, U, and sometimes Y 
+        if (letter === 'a' || letter === 'e' ||letter === 'i' ||letter === 'o' ||letter === 'u')  {
+          vowelCount++;
+        }
+
+      });
+
+        console.log(vowelCount);
+      }
+
+      vowelCounter("heythere");
+
+    ////////////// 4.
+
+      const paldin = (str) => {
+        const revString = str.split("").reverse().join("").toLowerCase();
+        const arrayString = str.split("").join("").toLowerCase();
+        let palindrome = false;
+
+        if (revString === arrayString) { palindrome = true }
+          
+        palindrome ? console.log(`${str} is a palindrome`): console.log(`${str} is not a palindrome`);
+      }
+
+        paldin('heyguys');
+        paldin('madam');
+
+        paldin('wow');
+
+        paldin('rowrow');
+
+
+    ////////////// 5. Because of hoisting so the console.log creates a variable called text and its undefined
+
+    // //////////// 6. No, because the second one will return undefined because fhe return statement is affected by automatic semicolon insertion.
+    </script>
+  </body>
+</html>
+
