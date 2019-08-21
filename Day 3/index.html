@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <script>
+    /////////1. A JavaScript object is an unordered collection of related data, in the form of “key: value” pairs.
+
+
+    ///////// 2. This in JavaScript usually refers to the object which 'owns' the method, but it depends on how a function is called.
+
+
+    ///////// 3. 
+      // Using the Object() constructor:
+
+      // var d = new Object();
+
+      // Using Object.create() method:
+
+      // var a = Object.create(null);
+      
+
+      // Using the bracket's syntactig sugar:
+      // var b = {};
+
+    ///////// 4.
+      let fruits = {};
+      fruits.fruit1 = 'blood orange';
+      fruits.fruit2 = 'apple';
+      fruits.fruit3 = 'watermelon';
+      fruits.fruit4 = 'banannas';
+      fruits.fruit5 = 'kiwi';
+
+      console.log(fruits);
+
+
+    ///////// 5. 
+      let person = {
+        name: 'John',
+        age: 20,
+        alertMyAge() {
+          alert(`${this.name} is ${this.age}`)
+        }
+      }
+
+      person.alertMyAge();
+
+    /////////// 6. 
+      class People {
+        constructor(firstName, lastName, age) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = age;
+        }
+        introduce() {
+          console.log(`My name is ${this.firstName} ${this.lastName} and I am a ${this.age}-years old.`);
+        }
+        discountEligible() {
+          if (this.age >= 65 ) {
+            console.log("You are eligible for a senior citizen discount");
+          } else {
+            console.log("Sorry you're not old enough");
+          }
+        }
+      }
+
+      let jon = new People("Jon", "doe", 90);
+      let jo = new People("Jo", "doe", 20);
+      jon.introduce();
+      jon.discountEligible();
+      jo.introduce();
+      jo.discountEligible();
+
+
+
+      ////////// 7.
+
+      // Create an object constructor for movies that includes properties for title,
+      // director, writer, release date, and motion picture rating. Include a trailer() method
+      // that prints “[movie name], written by [writer] and directed by [director],
+      // will be released on [release date].” Include an audience() method that
+      // prints “For audiences above the age of 16.” if the rating is R, “For audiences
+      // above the age of 12.” if the rating is PG-13, “Parental guidance suggested” if
+      // the rating is PG, and “For general audiences.” if the rating is G.
+
+      class Movie {
+        constructor(title, director, writer, releaseDate, rating) {
+          this.title = title;
+          this.director = director;
+          this.writer = writer;
+          this.releaseDate = releaseDate;
+          this.rating = rating;
+        }
+
+        trailer() {
+          console.log(`${this.title}, written by ${this.writer} and directed by ${this.director}, will be released on ${this.releaseDate}.`)
+        }
+
+        audience() {
+          if (this.rating === 'R') {
+            console.log("For audiences above the age of 16.");
+          } else if (this.rating === 'PG-13') {
+            console.log("For audiences above the age of 12.")
+          } else if (this.rating === 'PG') {
+            console.log("Parental guidance suggested")
+          } else if (this.rating === 'G') {
+            console.log("For general audiences.");
+          }
+        }
+      }
+
+      let friday13 = new Movie("Friday the 13th", "John doe", "Jay Doe", "9/9/2020", "R");
+      let friday14 = new Movie("Friday the 13th", "John doe", "Jay Doe", "9/9/2020", "PG-13");
+      let friday15 = new Movie("Friday the 13th", "John doe", "Jay Doe", "9/9/2020", "PG");
+      let friday16 = new Movie("Friday the 13th", "John doe", "Jay Doe", "9/9/2020", "G");
+
+
+      friday13.trailer();
+      friday14.trailer();
+      friday15.trailer();
+      friday16.trailer();
+
+      friday13.audience();
+      friday14.audience();
+      friday15.audience();
+      friday16.audience();
+
+    </script>
+  </body>
+</html>
